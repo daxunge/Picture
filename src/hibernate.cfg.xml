@@ -4,24 +4,19 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost:3306/picture</property>
+    <property name="connection.url">jdbc:mysql://localhost:8106/picture</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="connection.username">root</property>
-    <property name="connection.password">manager</property>
-      <mapping class="bean.BlogEntity"/>
-      <mapping class="bean.CameramanEntity"/>
-      <mapping class="bean.ComboEntity"/>
-      <mapping class="bean.CommentEntity"/>
-      <mapping class="bean.IssueEntity"/>
-      <mapping class="bean.OrderEntity"/>
-      <mapping class="bean.PictureEntity"/>
-      <mapping class="bean.PraiseEntity"/>
-      <mapping class="bean.UserEntity"/>
-      <!-- <property name="connection.username"/> -->
-    <!-- <property name="connection.password"/> -->
-
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hbm2ddl.auto">update</property> -->
+    <property name="connection.password">Yuepai2017@)!&amp;</property>
+    <mapping class="bean.Agree"/>
+    <mapping class="bean.Argue"/>
+    <mapping class="bean.Camer"/>
+    <mapping class="bean.Chat"/>
+    <mapping class="bean.Circle"/>
+    <mapping class="bean.Follow"/>
+    <mapping class="bean.Order"/>
+    <mapping class="bean.Plan"/>
+    <mapping class="bean.User"/>
   </session-factory>
 </hibernate-configuration>
