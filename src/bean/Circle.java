@@ -1,13 +1,10 @@
 package bean;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2017/4/29.
+ * Created by Administrator on 2017/4/30.
  */
 @Entity
 public class Circle {
@@ -17,6 +14,7 @@ public class Circle {
     private Timestamp circleTime;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "circle_id", nullable = false)
     public int getCircleId() {
         return circleId;

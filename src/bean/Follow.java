@@ -1,13 +1,10 @@
 package bean;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2017/4/29.
+ * Created by Administrator on 2017/4/30.
  */
 @Entity
 public class Follow {
@@ -16,6 +13,7 @@ public class Follow {
     private Timestamp followTime;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "follow_id", nullable = false)
     public int getFollowId() {
         return followId;

@@ -1,13 +1,10 @@
 package bean;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2017/4/29.
+ * Created by Administrator on 2017/4/30.
  */
 @Entity
 public class Order {
@@ -21,6 +18,7 @@ public class Order {
     private Integer orderState;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id", nullable = false)
     public int getOrderId() {
         return orderId;

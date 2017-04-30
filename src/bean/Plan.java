@@ -1,12 +1,9 @@
 package bean;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by Administrator on 2017/4/29.
+ * Created by Administrator on 2017/4/30.
  */
 @Entity
 public class Plan {
@@ -17,6 +14,7 @@ public class Plan {
     private String planPrice;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "plan_id", nullable = false)
     public int getPlanId() {
         return planId;

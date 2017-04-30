@@ -1,14 +1,13 @@
 package bean;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
- * Created by Administrator on 2017/4/29.
+ * Created by Administrator on 2017/4/30.
  */
 @Entity
 public class Camer {
+    private int camId;
     private String camIdentity;
     private String camJob;
     private String camWeapon;
@@ -17,6 +16,17 @@ public class Camer {
     private String camPresent;
     private String camHome;
     private String camPic;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cam_id", nullable = false)
+    public int getCamId() {
+        return camId;
+    }
+
+    public void setCamId(int camId) {
+        this.camId = camId;
+    }
 
     @Basic
     @Column(name = "cam_identity", nullable = true, length = 20)
@@ -105,6 +115,7 @@ public class Camer {
 
         Camer camer = (Camer) o;
 
+        if (camId != camer.camId) return false;
         if (camIdentity != null ? !camIdentity.equals(camer.camIdentity) : camer.camIdentity != null) return false;
         if (camJob != null ? !camJob.equals(camer.camJob) : camer.camJob != null) return false;
         if (camWeapon != null ? !camWeapon.equals(camer.camWeapon) : camer.camWeapon != null) return false;
@@ -119,7 +130,8 @@ public class Camer {
 
     @Override
     public int hashCode() {
-        int result = camIdentity != null ? camIdentity.hashCode() : 0;
+        int result = camId;
+        result = 31 * result + (camIdentity != null ? camIdentity.hashCode() : 0);
         result = 31 * result + (camJob != null ? camJob.hashCode() : 0);
         result = 31 * result + (camWeapon != null ? camWeapon.hashCode() : 0);
         result = 31 * result + (camType != null ? camType.hashCode() : 0);
